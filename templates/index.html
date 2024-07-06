@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Mail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Send an Email</h1>
+        <form method="POST" enctype="multipart/form-data" onsubmit="showSuccessMessage()">
+            <label for="email_receiver">To:</label>
+            <input type="email" id="email_receiver" name="email_receiver" required><br><br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required><br><br>
+            <label for="body">Body:</label><br>
+            <textarea id="body" name="body" rows="5" required></textarea><br><br>
+            <label for="attachments">Attachments:</label>
+            <input type="file" id="attachments" name="attachments" multiple><br><br>
+            <button type="submit">Send Email</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M7.196 11.524a.5.5 0 0 1-.392.2h-.404a.5.5 0 0 1-.392-.2l-2.6-3.2A.5.5 0 0 1 4.4 7.8l1.2-1.6a.5.5 0 0 1 .8 0l3.2 4a.5.5 0 0 1 0 .6l-1.2 1.6a.5.5 0 0 1-.8 0l-1.4-1.724z"/>
+                <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm-.354 11.354a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7 10.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3z"/>
+            </svg>
+            <p>Monkey sent Your Stuff Successfully!</p>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Monkey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.tiny.cloud/1/raxuda3stkg81g2tslmqyzh5dywaqnfxys4b70gohfl10yxl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#body',
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+        menubar: false,
+        toolbar: 'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | help'
+      });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mail Monkey</h1>
+        <form method="POST" enctype="multipart/form-data" onsubmit="showSuccessMessage()">
+            <label for="email_receiver">To:</label>
+            <input type="email" id="email_receiver" name="email_receiver" required><br><br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required><br><br>
+            <label for="body">Body:</label><br>
+            <textarea id="body" name="body" rows="8" required></textarea><br><br>
+            <label for="attachments">Attachments:</label>
+            <input type="file" id="attachments" name="attachments" multiple><br><br>
+            <button type="submit">Send Email</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M7.196 11.524a.5.5 0 0 1-.392.2h-.404a.5.5 0 0 1-.392-.2l-2.6-3.2A.5.5 0 0 1 4.4 7.8l1.2-1.6a.5.5 0 0 1 .8 0l3.2 4a.5.5 0 0 1 0 .6l-1.2 1.6a.5.5 0 0 1-.8 0l-1.4-1.724z"/>
+                <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm-.354 11.354a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7 10.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3z"/>
+            </svg>
+            <p>Email sent successfully!</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
